@@ -3,5 +3,6 @@ chmod 777 /home/ft/allow.sh
 ./killpfs.sh
 ./clearlogs.sh
 ./killmiddles.sh
-rm -rf /home/ft/hs_ft_pf_*/packet_forwarder/lora_pkt_fwd*
-rm -rf /home/ft/hs_ft_pf_*/packet_forwarder/obj/lora_pkt_fwd*.o
+./removeoriginalpf.sh
+# rm -rf /home/ft/hs_ft_pf_*/packet_forwarder/lora_pkt_fwd*
+# rm -rf /home/ft/hs_ft_pf_*/packet_forwarder/obj/lora_pkt_fwd*.o

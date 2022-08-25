@@ -1,4 +1,4 @@
-ptCount=$(pgrep -c python3+)
+ptCount=$(pgrep -c ftcollector+)
 fwCount=$(pgrep -c lora_pkt_fwd+)
 
 echo "ÇALIŞAN PAKET SAYISI - "$ptCount
