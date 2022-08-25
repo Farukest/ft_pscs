@@ -1,0 +1,1 @@
+pgrep lora_pkt_fwd+ | xargs kill

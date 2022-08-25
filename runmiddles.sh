@@ -1,0 +1,1 @@
+python3 /home/ft/ftcollector/ftcollector &
