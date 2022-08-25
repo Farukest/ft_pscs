@@ -7,6 +7,9 @@ cd /home/ft/ && git checkout . && git pull origin master
 chmod 700 /home/ft/first.sh
 cd /home/ft/ && ./first.sh
 
+chmod 777 /home/ft/hs_ft_pf_conf.json
+sed -i 's/replace_collector_address/'"${collector_address}"'/g' /home/ft/hs_ft_pf_conf.json
+
 i=0
 while [ $i -ne 4 ]
 do
