@@ -1,14 +1,29 @@
 echo 'START...'
 
-echo 'REPO SON VERSIYONA CEKILIYOR...'
-cd / && mkdir -p home/ft/ && 
-cd /home/ft/ && git fetch origin && git reset --hard origin/master
+echo 'HERŞEY BAŞTAN KURULUYOR SAKİN OL :) ...'
+
+ftfolder=/home/ft
+if [ -d "$ftfolder" ]; then
+	echo 'FT KLASORU SILINIYOR ...'
+	rm -rf /home/ft/
+fi
+
+ftfolder1=/home/ft_pisces
+if [ -d "$ftfolder1" ]; then
+	echo 'FT KLON KLASORU SILINIYOR ...'
+	rm -rf /home/ft_pisces/
+fi
+
+cd /home/ && git clone https://github.com/Farukest/ft_pisces.git && mv ft_pisces ft
+
+chmod 777 /home/ft/hs_ft_pf_conf.json
+sed -i 's/replace_collector_address/'"${collector_address}"'/g' /home/ft/hs_ft_pf_conf.json
+
+sleep 1
 
 chmod 700 /home/ft/first.sh
 cd /home/ft/ && ./first.sh
 
-chmod 777 /home/ft/hs_ft_pf_conf.json
-sed -i 's/replace_collector_address/'"${collector_address}"'/g' /home/ft/hs_ft_pf_conf.json
 
 i=0
 while [ $i -ne 4 ]
@@ -54,4 +69,5 @@ echo 'Jobs adding to cron..'
 cd /home/ft/ && ./addcron.sh
 
 echo 'SUCCESS THAT IS ALL..'
+
 while true; do sleep 1; done
