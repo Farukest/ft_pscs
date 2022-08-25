@@ -2,7 +2,16 @@ i=0
 while [ $i -ne 4 ]
 do
 		i=$(($i+1))
-		if pgrep lora_pkt_fwd$i
+		count=$(pgrep -c lora_pkt_fwd$i)
+		echo $count
+		if [[ $count -gt 1 ]]; 
+		then
+		  echo "Killing that pktwds.."
+		  pgrep lora_pkt_fwd$i | xargs kill
+		fi
+
+		
+		if [[ $count -eq 1 ]]; 
 		then 
 			echo "ALREADY RUNNING";
 		else

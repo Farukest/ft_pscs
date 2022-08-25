@@ -51,5 +51,4 @@ echo 'Jobs adding to cron..'
 cd /home/ft/ && ./addcron.sh
 
 echo 'SUCCESS THAT IS ALL..'
-
 while true; do sleep 1; done
