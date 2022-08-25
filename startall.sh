@@ -1,4 +1,3 @@
-#!/bin/sh
 echo '\nSTART...\n'
 
 echo '\nREPO SON VERSIYONA CEKILIYOR...\n'
