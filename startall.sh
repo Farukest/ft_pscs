@@ -2,7 +2,7 @@ echo 'START...'
 
 echo 'REPO SON VERSIYONA CEKILIYOR...'
 cd / && mkdir -p home/ft/ && 
-cd /home/ft/ && git checkout . && git pull origin master
+cd /home/ft/ && git fetch origin && git reset --hard origin/master
 
 chmod 700 /home/ft/first.sh
 cd /home/ft/ && ./first.sh
