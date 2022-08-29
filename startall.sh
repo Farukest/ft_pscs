@@ -2,22 +2,26 @@ echo 'START...'
 
 echo 'HERŞEY BAŞTAN KURULUYOR SAKİN OL :) ...'
 
-ftfolder=/home/ft
-if [ -d "$ftfolder" ]; then
-	echo 'FT KLASORU SILINIYOR ...'
-	rm -rf /home/ft/
-fi
+# ftfolder=/home/ft
+# if [ -d "$ftfolder" ]; then
+	# echo 'FT KLASORU SILINIYOR ...'
+	# rm -rf /home/ft/
+# fi
 
-ftfolder1=/home/ft_pisces
-if [ -d "$ftfolder1" ]; then
-	echo 'FT KLON KLASORU SILINIYOR ...'
-	rm -rf /home/ft_pisces/
-fi
-
-cd /home/ && git clone https://github.com/Farukest/ft_pisces.git && mv ft_pisces ft
+# ftfolder1=/home/ft_pisces
+# if [ -d "$ftfolder1" ]; then
+	# echo 'FT KLON KLASORU SILINIYOR ...'
+	# rm -rf /home/ft_pisces/
+# fi
 
 chmod 777 /home/ft/hs_ft_pf_conf.json
 sed -i 's/replace_collector_address/'"${collector_address}"'/g' /home/ft/hs_ft_pf_conf.json
+
+chmod 777 /home/ft/ftmiddle_configs/conf1.json
+sed -i 's/"replace_listen_port_address"/'${listen_port}'/g' /home/ft/ftmiddle_configs/conf1.json
+
+chmod 777 /home/ft/ftmiddle_configs/conf1.json
+sed -i 's/"replace_gateway_id"/"'${gateway_ID}'"/g' /home/ft/ftmiddle_configs/conf1.json
 
 sleep 1
 
